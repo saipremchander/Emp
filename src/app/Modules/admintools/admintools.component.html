@@ -1,0 +1,484 @@
+<div class="row">
+  <div class="breadcrumb">
+    <div class="col-sm-12 col-md-6">
+      <h5>{{Employeeheader}}</h5>
+      <small class="text-muted">Admintools / {{Employeeheader}}</small>
+    </div>
+    <div class="col-sm-12 col-md-6" align="right">
+      <button mat-raised-button color="primary" class="mx-2" *ngIf="backlist" (click)="back()"><span class="fa fa-undo"></span> back to list</button>
+      <button mat-raised-button color="accent" (click)="AddEmployee()" *ngIf="employeeslist && hidebtns" ><span class="fa fa-user"></span> Add Employee</button>
+    </div>
+  </div>
+</div>
+
+
+
+<div *ngIf="showform">
+
+    
+    <div class="card" >
+      <div class="card-body " >
+    
+          <form class="example-form" [formGroup]="registrationform" >
+              <div class="row">
+
+                <div class="col-sm-12 col-md-4 ">
+               
+                  <div class="formgroup row">
+                
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4">
+                   
+  
+                      <img [src]="url"  *ngIf="url" class="profilepic">
+               
+                      <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"  *ngIf="!url" class="profilepic">
+                      
+                    </div>
+
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-8" *ngIf="!url" align="left">
+                        <div class="pt-5">
+                          <label>Choose Profile Picture</label>
+                          <input id="file-company inputGroupFile02" class="form-control " formControlName="profilepic" (change)="imageload($event)" accept="image/jpg,image/gif,image/png,application/pdf,image/x-eps" name="fileToUpload" type="file" />
+                        </div>
+                    </div>
+                  </div>
+                  <h5>Personal Details</h5>
+                  <hr/>
+          
+                 
+                  <div class="formgroup row ">
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4">
+                      <label>First Name</label>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-8">
+                      <input type="text" formControlName="firstName" class="form-control">
+                    </div>
+                  </div>
+             
+                  <div class="formgroup row">
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4">
+                      <label>Last Name</label>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-8">
+                      <input type="text" formControlName="lastName" class="form-control">
+                    </div>
+                  </div>
+        
+                  <div class="formgroup row">
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4">
+                      <label>Father Name</label>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-8">
+                      <input type="text" formControlName="fatherName" class="form-control">
+                    </div>
+                  </div>
+            
+        
+     
+  
+                  <div class="formgroup row">
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4">
+                      <label>Mother Name</label>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-8">
+                      <input type="text" formControlName="motherName" class="form-control">
+                    </div>
+      
+                  </div>
+        
+               
+  
+                  <div class="formgroup row">
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4">
+                      <label>Date of Birth</label>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-8">
+                      <input type="date" formControlName="dateofbirth" class="form-control">
+                    </div>
+      
+                  </div>
+           
+                 </div>
+
+                <div class="col-sm-12 col-md-4">
+                  <h5>Employee Details</h5>
+                  <hr/>
+                  
+                    <div class="formgroup row ">
+                      <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4">
+                        <mat-label>Employee Id <span class="text-danger">*</span></mat-label>
+                      </div>
+                      <div class="col-sm-12 col-md-12 col-lg-12 col-xl-8">
+                        <small *ngIf="readonly" class="text-danger">Employee Id Can't Changed...!</small>
+                        <input matInput formControlName="id" [readonly]="readonly" [ngClass]="{ 'is-invalid': submitted  || validinput.id.dirty && validinput.id.errors}" class="form-control">
+                        <div *ngIf="submitted ||   validinput.id.dirty || validinput.id.touched" class="invalid-feedback">
+                          <div *ngIf="validinput.id.errors?.['required']">
+                            Employee Name is required.
+                          </div>
+                          </div>
+                      </div>
+                    </div>
+         
+                    <div class="formgroup row ">
+                      <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4">
+                        <mat-label>Employee Name <span class="text-danger">*</span></mat-label>
+                      </div>
+                      <div class="col-sm-12 col-md-12 col-lg-12 col-xl-8">
+                        <input matInput formControlName="employeename" [ngClass]="{ 'is-invalid': submitted  || validinput.employeename.dirty && validinput.employeename.errors}" class="form-control">
+                        <div *ngIf="submitted ||   validinput.employeename.dirty || validinput.employeename.touched" class="invalid-feedback">
+                          <div *ngIf="validinput.employeename.errors?.['required']">
+                            Employee Name is required.
+                          </div>
+                          </div>
+                      </div>
+                    </div>
+
+                     <div class="formgroup row ">
+                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4">
+                          <label>Password <span class="text-danger">*</span></label>
+                        </div>
+                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-8">
+                          <input  type="password" formControlName="password"  [ngClass]="{ 'is-invalid': submitted  || validinput.password.dirty && validinput.password.errors}" class="form-control">
+                          <div *ngIf="submitted ||   validinput.password.dirty || validinput.password.touched" class="invalid-feedback">
+                            <div *ngIf="validinput.password.errors?.['required']">
+                              Password is required.
+                            </div>
+                            <div *ngIf="validinput.password.errors?.['pattern']">
+                              Password Must have At least 8 characters in length Lowercase letters Uppercase letters Numbers Special characters
+                            </div>
+                            </div>
+                        </div>
+                      </div>
+                 
+              
+                         
+            
+
+                <div class="formgroup row">
+                  <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4">
+                    <label>Date of Joining</label>
+                  </div>
+                  <div class="col-sm-12 col-md-12 col-lg-12 col-xl-8">
+                    <input type="date" formControlName="dateofjoining" class="form-control">
+                  </div>
+    
+                </div>
+
+
+
+
+                <div class="formgroup row">
+                   
+                      <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4">
+                        <label>Select Role <span class="text-danger">*</span></label>
+                      </div>
+                      <div class="col-sm-12 col-md-12 col-lg-12 col-xl-8">
+                      <select formControlName="role" class="form-select"
+                      [ngClass]="{ 'is-invalid': submitted  || validinput.role.dirty && validinput.role.errors}">
+                        <option *ngFor="let role of rolelist" [value]="role.name">
+                          {{role.name}}
+                        </option>
+                      </select>
+                  
+                          <div *ngIf="submitted ||   validinput.role.dirty || validinput.role.touched" class="invalid-feedback">
+                            <div *ngIf="validinput.role.errors?.['required']">
+                              Role is required.
+                            </div>
+                         
+                         
+                          </div>
+                        </div>
+                      </div>
+                
+                    <div class="formgroup row ">
+                      <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4">
+                        <label>Employee Email</label>
+                      </div>
+                      <div class="col-sm-12 col-md-12 col-lg-12 col-xl-8">
+                        <input   type="email" formControlName="employeeemail" class="form-control">
+                      </div>
+                    </div>
+
+                   
+                 
+                    <div class="formgroup row ">
+                      <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4">
+                        <label>Select Gender</label>
+                      </div>
+                      <div class="col-sm-12 col-md-12 col-lg-12 col-xl-8">
+                       
+                          <input type="radio" value="Male" name="gender" formControlName="gender"> Male
+                          <input type="radio" value="Female" name="gender" formControlName="gender">  Female
+                 
+                      </div>
+                    </div>
+
+                    
+              
+                    <div class="formgroup row ">
+                      <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4">
+                        <label>Designation <span class="text-danger">*</span></label>
+                      </div>
+                      <div class="col-sm-12 col-md-12 col-lg-12 col-xl-8">
+                        <input  formControlName="designation" type="text" class="form-control"
+                        [ngClass]="{ 'is-invalid': submitted  || validinput.designation.dirty && validinput.designation.errors}">
+                       
+                        <div *ngIf="submitted ||   validinput.designation.dirty || validinput.designation.touched" class="invalid-feedback">
+                          <div *ngIf="validinput.designation.errors?.['required']">
+                            Designation is required.
+                          </div>
+                      </div>
+                  </div>
+                </div>
+
+
+           
+                    <div class="formgroup row ">
+                      <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4">
+                        <label>Department <span class="text-danger">*</span></label>
+                      </div>
+                      <div class="col-sm-12 col-md-12 col-lg-12 col-xl-8">
+                        <select formControlName="department" class="form-select" 
+                        [ngClass]="{ 'is-invalid': submitted  || validinput.department.dirty && validinput.department.errors}">
+                          <option  value="">Select Department</option>
+                          <option  value="Web Development">Web Development </option>
+                          <option  value="Software Development">Software Development </option>
+                          <option  value="Hr Management">Hr Management</option>
+                          <option  value="Testing">Testing</option>
+                          <option  value="Admin">Admin</option>
+                        </select>
+
+
+                        <div *ngIf="submitted ||   validinput.department.dirty || validinput.department.touched" class="invalid-feedback">
+                          <div *ngIf="validinput.department.errors?.['required']">
+                            Department is required.
+                          </div>
+                      </div>
+                  </div>
+                </div>
+                    
+                    <div class="d-block">
+                      <input type="checkbox" class="form-check" formControlName="isactive"> Active/InActive</div> 
+             
+                        <hr/>
+                        <button  type="button" class="btn btn-success d-inline-block" (click)="register()" *ngIf="saveemp" tabindex="-1">Save Employee</button>
+                        <button  type="button" class="btn btn-success d-inline-block" (click)="updateEmployee()" *ngIf="updateemp" tabindex="-1">Update Employee</button>
+                   
+             
+                    </div>
+                    <div class="col-sm-12 col-md-4 ">
+                      <h5>Contact Details</h5>
+                      <hr/>
+                 
+                       
+                      <div class="formgroup row ">
+                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4">
+                          <label>Pan Card</label>
+                        </div>
+                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-8">
+                          <input   type="number" formControlName="pan" class="form-control">
+                        </div>
+                      </div>
+                 
+                      <div class="formgroup row ">
+                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4">
+                          <label>Aadhar Card</label>
+                        </div>
+                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-8">
+                          <input  type="number" formControlName="aadhar" class="form-control">
+                        </div>
+                      </div>
+
+
+                      <div class="formgroup row ">
+                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4">
+                          <label>Mobile Number <span class="text-danger">*</span></label>
+                        </div>
+                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-8">
+                          <input type="text" formControlName="mobilenumber" maxlength="12"  oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" class="form-control" [ngClass]="{ 'is-invalid': submitted  || validinput.mobilenumber.dirty && validinput.mobilenumber.errors }"
+                          />
+                          <div *ngIf="submitted ||   validinput.mobilenumber.dirty || validinput.mobilenumber.touched" class="invalid-feedback">
+                            <div *ngIf="validinput.mobilenumber.errors?.['required']">
+                              Mobile Number is required.
+                            </div>
+                            <div *ngIf="validinput.mobilenumber.errors?.['minlength']">
+                              Mobile Number is Invalid.
+                            </div>
+                         
+                          </div>
+                          
+                        </div>
+                      </div>
+
+
+                      <div class="formgroup row ">
+                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4">
+                          <label>Emergency Contact <span class="text-danger">*</span></label>
+                        </div>
+                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-8">
+                    
+
+
+                        <input
+                        type="text"
+                        formControlName="refnumber"
+                        class="form-control"
+                        maxlength="12"
+                        oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
+                        [ngClass]="{ 'is-invalid': submitted  || validinput.refnumber.dirty && validinput.refnumber.errors }"
+                      />
+                      <div *ngIf="submitted || validinput.refnumber.touched || validinput.refnumber.dirty && validinput.refnumber.errors" class="invalid-feedback">
+                        <div *ngIf="validinput.refnumber.errors?.['required']">Emergency Contact is required</div>
+                        <div *ngIf="validinput.refnumber.errors?.['minlength']">
+                          Emergency Contact is Invalid
+                        </div>
+                        
+                      </div>
+                        </div>
+                      </div>
+
+                      <div class="formgroup row ">
+                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4">
+                          <label>Age</label>
+                        </div>
+                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-8">
+                          <input   type="number" formControlName="age" class="form-control">
+                        </div>
+                      </div>
+
+                      <div class="formgroup row ">
+                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4">
+                          <label>Address</label>
+                        </div>
+                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-8">
+                          <textarea  formControlName="address" class="form-control"> </textarea>
+                        </div>
+                      </div>
+
+               
+                      <div class="formgroup row ">
+                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4">
+                          <label>City</label>
+                        </div>
+                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-8">
+                          <input type="text" formControlName="city" class="form-control">
+                        </div>
+                      </div>
+
+                      <div class="formgroup row ">
+                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4">
+                          <label>State</label>
+                        </div>
+                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-8">
+                          <input type="text" formControlName="state" class="form-control">
+                        </div>
+                      </div>
+                
+                      <div class="formgroup row ">
+                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4">
+                          <label>Country</label>
+                        </div>
+                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-8">
+                          <input type="text" formControlName="country" class="form-control">
+                        </div>
+                      </div>
+                 
+                    </div>
+          
+
+             
+              </div>
+               
+
+  
+                    </form>
+          
+  
+                  </div>
+                </div>
+  </div>
+
+  <div *ngIf="employeeslist">
+      
+      <div class="card">
+        <div class="card-body">
+             <div class="row mb-3">
+            <div class="col-sm-12 col-md-5">
+             
+              
+                <input type="search" class="form-control" (keyup)="applyFilter($event)" placeholder="Search Employee" #input>
+            
+            </div>
+    
+            <div class="col-sm-12 col-md-7" align="right">
+              
+              </div>
+        </div>
+    
+    
+        <div class="row">
+
+   
+          <div class="table-responsive">
+
+
+
+         <div class="mat-elevation-z8">
+
+        
+            <table mat-table  [dataSource]="dataSource" matSort class="table table-hover table-bordered">
+              <ng-container matColumnDef="Employee Id">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Employee Id </th>
+                  <td mat-cell *matCellDef="let row"><span class="fw-500"> {{row['id']}}</span> </td>
+                </ng-container>
+          
+              <ng-container matColumnDef="Employee Name">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Employee Name </th>
+                <td mat-cell *matCellDef="let row"><h5 class="fw-500">{{row.employeename | titlecase}} <small class=" d-block" style="font-size:12px">{{row.designation | titlecase}}</small></h5> </td>
+              </ng-container>
+        
+              <ng-container matColumnDef="Employee Email">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>  Employee Email </th>
+                <td mat-cell *matCellDef="let row"> {{row.employeeemail}} </td>
+              </ng-container>
+              <ng-container matColumnDef="Role">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>  Employee Role </th>
+                <td mat-cell *matCellDef="let row"> {{row.role?row.role :"UnAssigned" |
+                  titlecase }} </td>
+              </ng-container>
+              <ng-container matColumnDef="Status">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Status </th>
+                <td mat-cell *matCellDef="let row" > <span  class="badge fw-100 " [ngClass]="{'text-bg-success': row.isactive === true, 'text-bg-danger': row.isactive === false}">{{row.isactive?'Active':"InActive"}} </span></td>
+              </ng-container>
+              <ng-container matColumnDef="Action">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header class="action"> Action </th>
+                <td mat-cell *matCellDef="let row" align="center">   
+                 
+           
+                     <button mat-button [matMenuTriggerFor]="menu"><span class="fa fa-ellipsis-v"></span></button>
+                    <mat-menu #menu="matMenu">
+                      <a  mat-menu-item *ngIf="hidebtns"  (click)="updatepopup(row.id)" class="mx-2"><span class="fa fa-edit text-info"></span> Edit</a>
+                      <a  mat-menu-item  class="mx-2"   (click)="viewpopup(row.id)" ><span class="fa fa-eye text-warn"></span> View</a>
+            
+                    </mat-menu>
+
+
+                    </td>
+              </ng-container>
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          
+              <!-- Row shown when there is no matching data. -->
+              <tr class="mat-row" *matNoDataRow>
+                <td class="mat-cell" colspan="5">No data matching the filter "{{input.value}}"</td>
+              </tr>
+            </table>
+          
+            <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+          </div>
+        </div>
+        </div>
+        </div>
+      </div>
+      
+  </div>

@@ -1,0 +1,96 @@
+.profile_bg_employee {
+    padding: 50px;
+    background: url(https://i0.wp.com/backgroundabstract.com/wp-content/uploads/edd/2022/04/5295526-e1655933128770.jpg);
+  
+    /* https://w0.peakpx.com/wallpaper/506/235/HD-wallpaper-white-hexagon-geometric-shapes-white-aesthetic.jpg */
+  
+    background-size: cover;
+    margin: -20px;
+    background-position: center;
+  }
+  
+  .profile_content {
+    color: white;
+    text-align: center;
+  }
+  .btn-checkin {
+
+    color: white;
+    border-radius: 50px;
+    border: none;
+    padding: 5px 25px;
+    display: inline-block;
+  }
+  .btn-success{
+    background: rgb(40 213 117) !important;
+  }
+  .btn-icon {
+    border: 1px solid #f90;
+    background: #f90;
+    width: 37px;
+    text-align:center;
+    font-size:13px;
+    height: 37px;
+    line-height: 20px;
+    transition: ease all 0.5s;
+    border-radius: 50%;
+  }
+  
+  .btn-icon:hover {
+    transition: ease all 0.5s;
+    background: white;
+    border: 1px solid #f90;
+    color: #f90;
+  }
+  .bdaybox{
+    list-style-type: none;
+    text-align: left;
+   font-size:18px;
+  }
+  .text-info{
+  
+    color:#069 !important;
+    font-weight: 500;
+  }
+  .bdaybox li{
+  
+   padding-bottom: 20px;
+    border-bottom: 1px solid rgb(244, 244, 244);
+  }
+  .fa-birthday-cake, .fa-calendar-o,.fa-bell,.fa-list {
+    color: rgb(239, 239, 239);
+
+    font-size: 30px;
+  
+
+  }
+  hr{
+    color: rgb(211, 212, 212);
+  }
+  .border-md-right{
+    border-right:1px solid #93939387;
+  }
+
+  .popupconfirmation{
+    position: fixed;
+    background: white;
+    padding: 35px;
+    top: 40%;
+    left: calc(40% - 80px);
+    border: 1px solid rgb(227, 227, 227);
+    border-radius: 15px;
+    box-shadow: 3px 12px 8px 9px rgb(227, 227, 227);
+  }
+
+  .notifyicon{
+    background: #f90;
+    padding: 20px;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    display: inline-block;
+    color:white !important;
+    position: relative;
+   line-height: 40px;
+    top: 40px;
+  }

@@ -1,0 +1,23 @@
+#pagewrapper {
+
+    z-index: 9999 !important;
+
+    padding: 20px;
+
+    height: auto;
+    border-radius: 0px;
+    margin-left: 80px;
+    opacity: 1;
+
+    overflow: hidden;
+    width:calc(100% - 80px);
+    max-width:100%;
+ 
+  }
+  
+  .pagemargin{
+
+    margin-top: 60px !important;
+
+   transition:ease all 0.5s;
+  }

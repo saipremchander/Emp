@@ -1,0 +1,368 @@
+<div class="profile_bg_employee">
+  <div class="profile_content">
+    <h3>Hey....! {{loggedinuser | titlecase}}</h3>
+    <h5>{{displaymessage}} </h5>
+  </div>
+</div>
+<div>
+  <div class="row" id="dashboard">
+    <div class="col-sm=12 col-md-4 col-lg-3 col-xl-3" *ngIf="adminblock">
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-sm-12 col-12 col-md-4 col-lg-3 border-md-right" align="center">
+              <span class="fa fa-users text-danger pt-3 fa-2x"></span>
+            </div>
+            <div class="col-sm-12 col-12 col-md-8 col-lg-7">
+              <h6>Total Employees</h6>
+              <h4 class="text-right text-danger">{{dobcheck.length}}</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm=12 col-md-4 col-lg-3 col-xl-3" *ngIf="adminblock">
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-sm-12 col-12 col-md-4 col-lg-3  border-md-right" align="center">
+              <span class="fa fa-users text-danger pt-3 fa-2x"></span>
+            </div>
+            <div class="col-sm-12 col-12 col-md-8 col-lg-7">
+              <h6>Total Employees</h6>
+              <h4 class="text-right text-danger">{{dobcheck.length}}</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm=12 col-md-4 col-lg-3 col-xl-3" *ngIf="isEmployee">
+      <div class="card bg-danger text-white">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-sm-12 col-12 col-md-4 col-lg-3  border-md-right" align="center">
+              <span class="fa fa-list pt-3 fa-2x"></span>
+            </div>
+            <div class="col-sm-12 col-12 col-md-8 col-lg-7">
+              <h6>No of Leaves </h6>
+              <h4 class="text-right">2</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm=12 col-md-4 col-lg-3 col-xl-3" *ngIf="isEmployee">
+      <div class="card bg-success text-white">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-sm-12 col-12 col-md-4 col-lg-3  border-md-right" align="center">
+              <span class="fa fa-check pt-3 fa-2x"></span>
+            </div>
+            <div class="col-sm-12 col-12 col-md-8 col-lg-7">
+              <h6>No of Present</h6>
+              <h4 class="text-right">25</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm=12 col-md-4 col-lg-6 col-xl-6">
+      <div class="card">
+        <div class="card-body" style="padding:30px">
+          <div class="row">
+            <div class="col-sm-12 col-12 col-md-5">
+              <button (click)="check()" class="btn  btn-checkin" [ngClass]="{'btn-danger': btnbreak === true, 'btn-success': btnbreak === false}" *ngIf="checkbtn">
+                {{ checktext }}
+                <span class="fa fa-clock-o ms-2"></span>
+              </button>
+              <h4 class="d-inline-block mx-3 text-muted"> {{ hdisplay }} : {{ mdisplay }}  : {{ sdisplay }}</h4>
+            </div>
+            <div class="col-sm-12 col-12 col-md-7 text-end">
+              <button (click)="break()" class="btn btn-warning btn-icon" *ngIf="btnbreak">
+                <span class="fa fa-coffee"></span>
+              </button>
+              <h6 class="d-inline-block mx-3 text-muted">
+                {{ breaktext }}
+              </h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-3">
+    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4">
+      <div class="card p-1">
+
+        <div class="row p-0">
+           <div class="col-4" align="center">
+            <div class=" notifyicon">
+              <span class="fa fa-calendar-o"></span>
+           </div>
+           </div>
+           <div class="col-8">
+            
+            <h4 class=" text-dark mt-5">Upcoming Holiday's</h4>
+            <hr/>
+           </div>
+        </div>
+
+        
+        <div class="p-2  mt-5 text-center">
+          
+         
+          <ul *ngFor="let holiday of holidaylists;let i=index"  class="bdaybox">
+            <div >
+            <li class="row"  *ngIf="i<3">
+              <div class="col-2" align="center">
+                <span class="fa fa-calendar-o  me-3"></span>
+              </div>
+              <div class="col-10">
+
+                <div class="row">
+             
+                   <div class="col-8">
+                    <span> <b> {{holiday.festivalname | uppercase }}</b><br/><small>{{   (holiday.description.length>40)? (holiday.description | slice:0:30)+'...':(holiday.description) }}</small> </span>
+                    
+                   </div>
+                   <div class="col-4">
+                    <div *ngIf="(holiday.date | date:'dd') === datedisplay.toString()">
+                        <span class="text-info d-inline-block">Today</span>
+                     
+                    </div>
+                    <div *ngIf="(holiday.date | date:'dd') === (datedisplay+ 1).toString()">
+                      <span class="text-info d-inline-block">Tommorrow</span>
+                  </div>
+                  
+                    <div *ngIf="(holiday.date | date:'dd') !== datedisplay.toString() &&
+                    (holiday.date | date:'dd') !== (datedisplay + 1).toString()">
+                 <span class="display6 text-info d-inline-block">{{holiday.date | date:"dd"}}
+                   {{holiday.date | date:"MMM"}}</span>
+                  
+                  </div> 
+                   </div>
+               
+   
+                </div>
+              </div>
+ </li>
+        
+ 
+            
+          </div>
+          </ul>
+          <div class="text-right" align="right"> <a routerLink="/calender/holidayslist" class="text-muted">View Holiday List</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4">
+      <div class="card p-1">
+   
+        <div class="row p-0">
+          <div class="col-4" align="center">
+           <div class=" notifyicon bg-info" >
+             <span class="fa fa-birthday-cake"></span>
+          </div>
+          </div>
+          <div class="col-8">
+           
+           <h4 class=" text-dark mt-5">Upcoming Birthday's</h4>
+           <hr/>
+          </div>
+       </div>
+        <div class="p-2  mt-5 text-center">
+     
+          <ul *ngFor="let dob of dobcheck ; let i= index" class="bdaybox">
+            <div *ngIf="i<3">
+            <div >
+            <li class="row">
+              <div class="col-2" align="center">
+                <span class="fa fa-birthday-cake  me-3"></span>
+              </div>
+              <div class="col-10">
+
+                <div class="row">
+             
+                   <div class="col-8">
+                    <span> <b> {{dob.employeename | uppercase }}</b> <small class="d-block"> {{dob.designation}} </small></span>
+                   </div>
+                   <div class="col-4">
+                    <div *ngIf="(dob.dateofbirth | date:'dd') === datedisplay.toString()">
+                        <span class="text-info d-inline-block">Today</span>
+                     
+                    </div>
+                    <div *ngIf="(dob.dateofbirth | date:'dd') === (datedisplay+ 1).toString()">
+                      <span class="text-info d-inline-block">Tommorrow</span>
+                  </div>
+                  
+                    <div *ngIf="(dob.dateofbirth | date:'dd') !== datedisplay.toString() &&
+                    (dob.dateofbirth | date:'dd') !== (datedisplay + 1).toString()">
+                 <span class="display6 text-info d-inline-block">{{dob.dateofbirth | date:"dd"}}
+                   {{dob.dateofbirth | date:"MMM"}}</span>
+                  
+                  </div> 
+                   </div>
+               
+   
+                </div>
+              </div>
+ </li>
+        
+            
+          </div>
+        </div>
+          </ul>
+          <div class="text-right" align="right"> <a routerLink="/calender/birthday" class="text-muted">View Birthday List</a></div>
+     
+          <div *ngIf="dobcheck.length == 0">
+            <span class="fa fa-smile-o fa-4x text-muted"></span>
+            <h5 class="text-center text-muted mt-3">No Birthday's Today</h5>
+          </div>
+       
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4">
+        <div *ngIf="isEmployee">
+          <div class=" p-3 text-white bg-info card" align="center">
+
+            <div class="row">
+               <div class="col-4 border-md-right" >
+                <h5 class="m-0 p-0">{{ mondisplay }} {{ yeardisplay }}</h5>
+                <h4 class="display-2 m-0 p-0"> {{ datedisplay }} </h4>
+               </div>
+    
+               <div class="col-8 p-3">
+    
+                <h4 class="m-0 p-0"> {{ daydisplay }}</h4>
+                <h1 class="m-0 pt-2"> {{ hourdisplay }} : {{ mindisplay }} : {{ secdisplay }} {{ padispaly }}</h1>
+                </div>
+            </div>
+        
+          
+           
+          </div>
+        </div>
+
+        <div *ngIf="hrblock">
+
+
+          <div class="card p-1">
+            <div class="row p-0">
+              <div class="col-4" align="center">
+               <div class=" notifyicon bg-info" >
+                 <span class="fa fa-bell"></span>
+              </div>
+              </div>
+              <div class="col-8">
+               
+               <h4 class=" text-dark mt-5">Notifications</h4>
+               <hr/>
+              </div>
+           </div>
+            <div class="p-2  mt-5 text-center">
+         
+              <ul *ngFor="let notify of notificationlist;let i =index" class="bdaybox">
+            
+                <li class="row" *ngIf="i<3">
+                  <div class="col-2" align="center">
+                    <span class="fa fa-bell  me-3"></span>
+                  </div>
+                  <div class="col-10">
+                    <div class="row">
+             
+                      <div class="col-8">
+                       <span> <b> {{notify.EmployeeName | titlecase}}</b> <small class="d-block">{{notify.label}}   <b>{{notify.description}}</b> </small></span>
+                      </div>
+                      <div class="col-4">
+                        <span class="display6 text-info d-inline-block">  {{notify.date}}
+                         </span>
+                       
+                        <div *ngIf="(notify.date | date:'dd') === datedisplay.toString()">
+                          <span class="text-info d-inline-block">Today</span>
+                        </div>
+                      </div>
+                      </div>
+                  </div>
+     </li>
+            
+                
+          
+              </ul>
+              <div class="text-right" align="right"> <a routerLink="/calender/notifications" class="text-muted">View Notifications List</a></div>
+      
+              <div *ngIf="notificationlist.length == 0">
+                <span class="fa fa-smile-o fa-4x text-muted"></span>
+                <h5 class="text-center text-muted mt-3">No Notification's Today</h5>
+              </div>
+           
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+
+  <div class="card mt-3" *ngIf="hrblock">
+    <div class="row p-0">
+    
+      <div class="col-12">
+       
+       <h4 class=" text-dark mt-5">Task List</h4>
+       <hr/>
+      </div>
+   </div>
+    <div class="row px-5"  *ngFor="let data of tasklist;let i=index">
+     
+       <ul class="col-12 bdaybox"  *ngIf="i<5">
+        <li class="row ">
+          <div class="col-sm-12 col-md-4">
+            <h5>  {{data.EmployeeName}}</h5>
+            <small>{{data.team}}</small>
+          </div>
+          <div class="col-sm-12 col-md-6">
+            <h6>  {{data.description}}</h6>
+   
+          </div>
+          <div class="col-sm-12 col-md-2">
+            <p> {{data.date}} - {{data.time | date: 'HH:mm:ss' }}</p>
+          </div>
+          </li>
+        </ul>
+      
+ 
+    
+    </div>
+    <div class="text-right" align="right"> <a routerLink="/tasks/tasklist" class="text-muted">View Task List</a></div>
+    
+  </div>
+</div>
+<div class="popupconfirmation" *ngIf="popup">
+
+  <h4>Working Hours Not Completed...!</h4>
+  <h6>Inform Hr for Early CheckOut</h6>
+  <button (click)="informhr()" class="btn btn-info mx-2"  data-bs-toggle="modal" data-bs-target="#earlycheckout"> Inform Hr</button>
+  <button (click)="this.popup =false" class="btn btn-danger mx-2">Cancel</button>
+</div>
+<div id="earlycheckout" class="modal fade mt-5" role="dialog" *ngIf="modal">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        
+        <h4 class="modal-title">Reason For Early CheckOut</h4>
+        <button type="button"  class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" [formGroup]="earlycheckoutform">
+        <label>Reason For Early CheckOut <span class="text-danger">*</span></label>
+    
+        <textarea  class="form-control" placeholder="Reason for Early Checkout" formControlName="description"></textarea>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success mx-2" (click)="reasonsend()">Submit to Hr</button>
+        <button type="button" class="btn btn-danger mx-2 " data-bs-dismiss="modal" aria-label="Close">Cancel</button>
+      </div>
+    </div>
+
+  </div>
+</div>

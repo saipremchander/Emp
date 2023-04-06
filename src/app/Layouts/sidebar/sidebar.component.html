@@ -1,0 +1,110 @@
+
+    <div class="iconmenu">
+      <div class="text-center side-icon-menu" (click)="toggle()">
+        <a routerLinkActive="active-link" routerLink="/dashboard" class="nav-link">
+          <span class="fa fa-dashboard fa-1x"></span>
+          <p>Dashboard</p></a>
+      </div>
+
+      <div class="text-center side-icon-menu" *ngIf="adminmenu" (click)="toggle()">
+        <a routerLinkActive="active-link" routerLink="/admintools" class="nav-link">
+          <span class="fa fa-cog fa-1x"></span>
+          <p>{{menuemployee1}}</p></a>
+      </div>
+  
+      <div class="text-center side-icon-menu" (click)="selfservicebtn()">
+        <span class="fa fa-user fa-1x text-muted"></span>
+        <p>Self Service</p>
+  
+        <ul class="canvamenu" [class.canvaactive]="selfserviceshow">
+          <li class="nav-item" *ngFor="let navemp of selfservice">
+            <a
+              routerLinkActive="activelink"
+              [routerLink]="navemp.link"
+              class="nav-link canvatest"
+            >
+              <span class="{{ navemp.icon }}"></span> {{ navemp.name }}</a
+            >
+          </li>
+        </ul>
+      </div>
+  
+      <div class="text-center side-icon-menu" (click)="calenderbtn()">
+        <span class="fa fa-calendar fa-1x"></span>
+        <p>Calender</p>
+  
+        <ul class="canvamenu" [class.canvaactive]="calendershow">
+          <li class="nav-item" >
+            <a
+              routerLinkActive="activelink"
+              routerLink="calender/holidayslist"
+              class="nav-link canvatest"
+            >
+             Holidays List
+            </a>
+          </li>
+          <li class="nav-item" >
+            <a
+              routerLinkActive="activelink"
+              routerLink="calender/notifications"
+              class="nav-link canvatest"
+            >
+            Notifications
+            </a>
+          </li>
+          <li class="nav-item" >
+            <a
+              routerLinkActive="activelink"
+              routerLink="calender/workanniversary"
+              class="nav-link canvatest"
+            >
+            Employees Work Anniversary
+            </a>
+          </li>
+          <li class="nav-item" >
+            <a
+              routerLinkActive="activelink"
+              routerLink="calender/birthday"
+              class="nav-link canvatest"
+            >
+             Employees Birthday
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="text-center side-icon-menu" (click)="toggle()" *ngIf="hrmenu">
+        <a
+          routerLinkActive="active-link"
+          routerLink="/attendance"
+          class="nav-link"
+        >
+          <span class="fa fa-calendar-check-o fa-1x"></span>
+          <p>Attendance</p>
+        </a>
+      </div>
+  
+      <div class="text-center side-icon-menu" (click)="taskbtn()">
+        <span class="fa fa-tasks fa-1x"></span>
+        <p>Tasks</p>
+  
+        <ul class="canvamenu" [class.canvaactive]="taskshow">
+          <li class="nav-item" *ngFor="let navemp of task">
+            <a
+              routerLinkActive="activelink"
+              [routerLink]="navemp.link"
+              class="nav-link canvatest"
+            >
+              <span class="{{ navemp.icon }}"></span> {{ navemp.name }}</a
+            >
+          </li>
+        </ul>
+      </div>
+      <div class="text-center side-icon-menu">
+        <a routerLinkActive="active-link" routerLink="/time" class="nav-link">
+          <span class="fa fa-clock-o fa-1x"></span>
+          <p>Time Tracker</p>
+        </a>
+      </div>
+    </div>
+
+  

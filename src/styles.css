@@ -1,0 +1,117 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { background: #E9EAED; overflow-x: hidden;}
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.mat-elevation-z8, .mat-mdc-elevation-specific.mat-elevation-z8{
+    box-shadow: none !important;
+}
+
+.form{
+    width: 400px;
+    margin: auto;
+    
+    padding: 10px 20px;
+}
+.card{
+    box-shadow: 0px 0 30px rgb(1 41 112 / 10%);
+    padding: 30px;
+}
+#dashboard .card{
+    padding: 5px !important;
+}
+.mdc-text-field--filled:not(.mdc-text-field--disabled) {
+    background-color: #f6fbff;
+    overflow: visible;
+    border: 1px solid #f3f3f3;
+
+}
+.fw-100{
+    font-weight: 200;
+}
+.fw-500{
+    font-weight: 500;
+}
+.mat-mdc-paginator {
+    display: block;
+    background: transparent;
+}
+ table {
+          border-collapse: separate;
+    border-spacing: 0 10px !important;
+    border:1px solid #CCC;
+    background:transparent !important;
+ }
+ thead tr{
+    background:none !important;
+    box-shadow:none !important;
+ }
+tr{
+
+    background: white !important;
+
+    box-shadow: -2px 1px 4px 1px rgb(107 107 107 / 14%) !important;
+   
+}
+
+
+
+
+.mat-calendar-table{
+    border:none  !important;
+
+}
+
+
+
+
+
+th{
+    background:linear-gradient(#e8e8e8,#CCC) !important;
+    padding: 0px;
+    font-size: 16px !important;
+    margin: 5px !important;
+}
+
+.mat-calendar-table tr{
+    box-shadow:none !important;   
+
+}
+.fw-100 {
+    font-size:13px;
+    margin: auto;
+}
+.breadcrumb{
+    padding:5px 20px;
+    border-bottom:1px solid #CCC;
+}
+
+.mat-mdc-card:has(table) {
+    background: transparent;
+    box-shadow: none !important;
+}
+
+.profilepic{
+    border-radius: 50%;
+    box-shadow: 0px 0 30px rgb(1 41 112 / 10%);
+    padding: 5px;
+    width: 150px;
+    height: 150px;
+    margin: auto;
+}
+.formgroup{
+    margin-bottom: 20px;
+}
+
+textarea{
+    resize: none;
+}
+body:has(.canvaactive) .pagewrapper{
+    transform: scale(0.9); 
+  border-radius: 15px;
+    transition:ease all 0.5s;
+}
+
+ol, ul{
+    padding-left: 0px !important;
+}

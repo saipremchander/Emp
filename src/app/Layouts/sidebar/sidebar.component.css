@@ -1,0 +1,108 @@
+.canvamenu {
+    /* background: linear-gradient(326deg, #06629c, #3210aa); */
+    background: #39354c;
+    width: 240px;
+    color: white;
+    transition: ease all 0.5s;
+    border: none;
+    box-shadow: none;
+    left: -280px;
+    top: 60px;
+    height: 100vh;
+    position: fixed;
+    z-index: -1 !important;
+  }
+  
+  .iconmenu {
+    height: 100vh;
+    width: 80px;
+    background: #262433;
+    position: fixed;
+    transform: none;
+    top: 60px;
+    z-index: 99 !important;
+  }
+  
+  .side-icon-menu {
+    color: rgb(163 163 163);
+    margin: 0px;
+    background: #262433;
+    padding: 20px 5px 0px 5px;
+    line-height: 20px;
+    border-bottom: 1px solid #303030;
+  
+    border-left: 3px solid transparent;
+  }
+  
+  .side-icon-menu p {
+    font-size: 12.5px;
+    text-decoration: none;
+    color: rgb(114, 114, 114);
+  }
+  .fa-1x {
+    font-size: 16px;
+  }
+  
+  .side-icon-menu:hover {
+    background: #39354c;
+    cursor: pointer;
+  }
+  .side-icon-menu:has(.active-link),
+  .side-icon-menu:has(.activelink) {
+    background: #39354c !important;
+  }
+  .side-icon-menu:has(.activelink):first-child,
+  .side-icon-menu:has(.active-link):first-child {
+    border-left: 3px solid rgb(0, 201, 228);
+  }
+  .side-icon-menu:has(.activelink):nth-child(2),
+  .side-icon-menu:has(.active-link):nth-child(2) {
+    border-left: 3px solid #690 !important;
+  }
+  .side-icon-menu:has(.activelink):nth-child(2) .activelink {
+    color: #690 !important;
+  }
+  
+  .side-icon-menu:has(.activelink):nth-child(3),
+  .side-icon-menu:has(.active-link):nth-child(3) {
+    border-left: 3px solid #cf1e48 !important;
+  }
+  .side-icon-menu:has(.activelink):nth-child(3) .activelink {
+    color: #cf1e48 !important;
+  }
+  .side-icon-menu:has(.activelink):nth-child(4),
+  .side-icon-menu:has(.active-link):nth-child(4) {
+    border-left: 3px solid #f90;
+  }
+  
+  
+  .side-icon-menu:has(.activelink):nth-child(5),
+  .side-icon-menu:has(.active-link):nth-child(5) {
+    border-left: 3px solid rgb(251, 255, 0) !important;
+  }
+  .side-icon-menu:has(.activelink):nth-child(5) .activelink {
+    color: rgb(251, 255, 0) !important;
+  }
+  a {
+    text-decoration: none;
+  }
+  ul {
+    padding-inline-start: 0px !important;
+    padding-top: 30px;
+  }
+  ul li a {
+    padding: 5px 20px;
+    text-align: left;
+  }
+  ul li {
+    list-style-type: none;
+    padding: 5px 20px;
+  }
+  ul li a.activelink {
+    background: rgba(17, 17, 17, 0.2);
+    border-radius: 5px;
+  }
+  .canvaactive {
+    left: 80px;
+    transition: ease all 0.5s;
+  }

@@ -1,0 +1,12 @@
+.profilepic{
+    width: 130px !important;
+    height: 130px !important;
+}
+.list-group-item{
+    margin: 10px auto;
+    font-size:14px;
+
+}
+.list-group-item b{
+    font-size:16px;
+}

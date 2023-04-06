@@ -1,0 +1,14 @@
+
+    <app-topbar *ngIf="showmenu"></app-topbar>
+    <app-sidebar *ngIf="showmenu"></app-sidebar>
+
+
+    
+  <div
+    id="pagewrapper"
+    class="pagewrapper"
+    [class.pagemargin]="showmenu"
+  >
+    <router-outlet></router-outlet>
+  </div>
+  

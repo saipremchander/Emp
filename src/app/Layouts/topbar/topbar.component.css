@@ -1,0 +1,61 @@
+.topbar {
+    background: white;
+    height: 60px;
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    z-index: 9999;
+    box-shadow: 3px 2px 12px rgb(63 63 63 / 12%)
+  }
+  .btn-icon{
+    color: #f90;
+
+    font-size: 20px;
+    position: relative;
+    top:5px;
+    cursor:pointer
+}
+
+.count{
+  background: red;
+  border-radius: 50%;
+  padding: 5px;
+  width: 25px;
+  height: 25px;
+  position: relative;
+  color: white;
+  left: -3px;
+  font-size: 13px;
+  font-weight: bold;
+  top: -6px;
+
+}
+
+.notificationbox{
+  position: fixed;
+  right: 0px;
+  top:60px;
+  background:white;
+  animation:notify 0.5s 1;
+  width: 20%;
+  padding: 25px;
+  box-shadow: 5px 2px 9px 0px #b7b7b7;
+  height: 100vh;
+}
+
+@keyframes notify {
+  0%{
+    right: -500px;
+  }
+  100%{
+    right:0px;
+  }
+  
+}
+
+.bdaybox{
+  list-style-type: none;
+  text-align: left;
+ font-size:18px;
+ border-bottom: 1px solid #ededed;
+}

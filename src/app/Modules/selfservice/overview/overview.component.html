@@ -1,0 +1,184 @@
+<div class="row">
+    <div class="breadcrumb">
+      <div class="col-sm-12 col-md-6">
+        <h5>{{Employeeprofile}}</h5>
+        <small class="text-muted">SelfService / {{Employeeprofile}}</small>
+      </div>
+      <div class="col-sm-12 col-md-6" align="right">
+          </div>
+    </div>
+  </div>
+  
+<div class="row">
+    <div class="col-sm-12 col-md-4">
+        <div class="card ">
+
+            <div class="card-body p-2 bg-white">
+                <div class="row">
+                       
+                    <div class="col-sm-12 col-md-4">
+
+                        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" class="profilepic" />
+                 
+                    </div>
+                    <div class="col-sm-12 col-md-8">
+                        <h5 class="text-danger pt-1"> Employee ID : {{profiledata.id}}</h5>
+                        <h4 class="text-info ">{{profiledata.employeename | titlecase}}</h4>
+                        <h6 class="text-dark">Role :  {{profiledata.role | titlecase}}</h6>        
+                     <div  *ngIf="checkedin">
+                        <button class="btn btn-sm btn-success me-2"></button>
+                       <b >Available </b>
+                    </div>
+                    <div  *ngIf="checkedout">
+                        <button class="btn btn-sm btn-warning me-2" *ngIf="checkedout"></button> <b >Away</b>
+                    </div>
+                    </div>
+                </div>
+            </div>
+     
+       
+        </div>
+        <div class="card mt-2">
+            <div class="card-body p-2 bg-white">
+                <div class="row">
+                       
+                  
+                    <div class="col-sm-12 col-md-12 text-muted">
+
+                        <h5>Employee Details</h5>
+                        <hr/>
+
+                        <ul class="">
+                               
+                            <li class="list-group-item" >   <b style="font-size:20px">{{profiledata.firstName | titlecase}} {{profiledata.lastName | titlecase}}</b>  {{profiledata.designation}}</li>
+                            <li class="list-group-item">  Date of Joining <b>{{profiledata.dateofjoining | date:'fullDate'}}</b></li>
+    
+                        </ul>
+                      
+                      
+                        <div class="row">
+                          
+                        
+                            <div class="col-sm-12 col-md-6">
+                                <ul class="">
+                               
+                                    <li class="list-group-item">Designation <br/><b>{{profiledata.designation}}</b></li>
+                                    <li class="list-group-item">Department<br/> <b>{{profiledata.department}}</b></li>
+            
+                                </ul>
+                            </div>
+                            <div class="col-sm-12 col-md-6">
+                                <ul class="">
+                            
+                                    <li class="list-group-item">Email <br/><b>{{profiledata.employeeemail}}</b></li>
+                                    <li class="list-group-item">Mobile<br/> <b>{{profiledata.mobilenumber}}</b></li>
+            
+                                </ul>
+                            </div>
+                        </div>
+                  
+                    </div>
+             
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-sm-12 col-md-5">
+        <div class="card text-muted">
+            <div class="card-body">
+             <div class="row">
+                
+                <h5>Personal Details</h5>
+                <hr/>
+
+                    <div class="col-sm-12 col-md-6">
+
+                        <ul class="">
+                            <li class="list-group-item">FatherName  <br/> <b>{{profiledata.fatherName  | titlecase}}</b></li>
+
+                            <li class="list-group-item">MotherName <br/> <b>{{profiledata.motherName  | titlecase}}</b></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+
+                        <ul class="">
+                        
+                            <li class="list-group-item">Date of Birth  <br/> <b>{{profiledata.dateofbirth |  date:'fullDate'}}</b></li>
+                            <li class="list-group-item">Gender  <br/><b>{{profiledata.gender  | titlecase}}({{profiledata.age}})</b></li>
+        
+                        </ul>
+                    </div>
+                    <h5 class="mt-1">Address Details</h5>
+                <hr/>
+
+                <div class="col-sm-12 col-md-6">
+
+                    <ul class="">
+                        <li class="list-group-item">Address  <br/> <b>{{profiledata.address  | titlecase}}</b></li>
+
+                        <li class="list-group-item">City  <br/> <b>{{profiledata.city  | titlecase}}</b></li>
+                    </ul>
+                </div>
+                <div class="col-sm-12 col-md-6">
+
+                    <ul class="">
+                    
+                        <li class="list-group-item">State  <br/> <b>{{profiledata.state  | titlecase}}</b></li>
+                        <li class="list-group-item">Country  <br/> <b>{{profiledata.country  | titlecase}}</b></li>
+                    </ul>
+                </div>
+
+                <h5 class="mt-1">Other Details</h5>
+                <hr/>
+                <div class="col-sm-12 col-md-6">
+
+                    <ul class="">
+                        <li class="list-group-item">Pan Card  <br/> <b>{{profiledata.pan  | titlecase}}</b></li>
+
+                        <li class="list-group-item">Aadhar  <br/> <b>{{profiledata.aadhar  | titlecase}}</b></li>
+                    </ul>
+                </div>
+                <div class="col-sm-12 col-md-6">
+
+                    <ul class="">
+                    
+                        <li class="list-group-item">Mobile Number  <br/> <b>{{profiledata.mobilenumber  | titlecase}}</b></li>
+                        <li class="list-group-item">Reference Number  <br/> <b>{{profiledata.refnumber  | titlecase}}</b></li>
+                    </ul>
+                </div>
+                </div>
+
+
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="col-sm-12 col-md-3">
+        <div class="card text-muted">
+            <div class="card-body">
+                <h5>My Task Details</h5>
+                <hr/>
+                <div *ngFor="let mytask of filteredUnitsLlist;let i = index">
+                <ul  *ngIf="i<5"  style="list-style-type:none;">
+                   
+                    <li >{{mytask.date}} - {{mytask.time | date: 'HH:mm:ss' }}  </li>
+                    <li><h6><b>{{mytask.EmployeeName | titlecase}}</b></h6> </li>             
+                    <li>{{mytask.description}}</li>
+                </ul>
+            
+            </div>
+            <div align="center" *ngIf="filteredUnitsLlist.length == 0">
+                <span class="fa fa-smile-o fa-4x text-muted"></span>
+                <h5 class="text-center text-muted mt-3">No Task's Today</h5>
+              </div>
+            <hr/>
+            <div class="text-right" align="right"> <a routerLink="/tasks/mytasks" class="text-muted">View Tasks</a></div>
+    
+              
+    </div>  </div>  </div>
+</div>

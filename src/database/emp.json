@@ -1,0 +1,531 @@
+{
+  "employee": [
+    {
+      "id": "202207",
+      "firstName": "saiprem",
+      "lastName": "chander",
+      "employeename": "saipremchander",
+      "employeeemail": "prm@gmail.co",
+      "password": "Prem@9703",
+      "gender": "male",
+      "role": "admin",
+      "profilepic": "C:\\fakepath\\screencapture-localhost-new1-index-php-elementor-29-2023-03-11-00_54_34.png",
+      "fatherName": "sarangapani",
+      "motherName": "laxmi",
+      "dateofbirth": "2023-03-17",
+      "dateofjoining": "2022-03-22",
+      "designation": "Web Development",
+      "department": "Software Development",
+      "age": 28,
+      "aadhar": "381491315474",
+      "pan": "EJPPK2606L",
+      "address": "25-8-154 Bapujinagar, Kazipet, Warangal",
+      "city": "Hanamkonda",
+      "state": "Telangana",
+      "country": "India",
+      "refnumber": "9494944646",
+      "mobilenumber": "9494944646",
+      "salary": 250000,
+      "isactive": true
+    },
+    {
+      "id": "202208",
+      "firstName": "HR",
+      "lastName": "ChakraBorthy",
+      "employeename": "BBB Chakraborthy",
+      "employeeemail": "santanu@gmail.com",
+      "password": "Prem@9703",
+      "gender": "male",
+      "role": "hr",
+      "fatherName": "Shankar",
+      "motherName": "Chakraborthy",
+      "dateofbirth": "2023-03-13",
+      "dateofjoining": "2022-03-23",
+      "designation": "Web Developer",
+      "department": "Software Development",
+      "age": 98,
+      "city": "s",
+      "state": "s",
+      "country": "s",
+      "refnumber": "9494944646",
+      "mobilenumber": "9494944646",
+      "salary": 300000,
+      "isactive": true
+    },
+    {
+      "id": "202209",
+      "firstName": "Santanu",
+      "lastName": "ChakraBorthy",
+      "employeename": "Santanu Chakraborthy",
+      "employeeemail": "santanu@gmail.com",
+      "password": "Prem@9703",
+      "gender": "Male",
+      "role": "employee",
+      "fatherName": "Shankar",
+      "motherName": "Chakraborthy",
+      "dateofbirth": "2023-03-23",
+      "dateofjoining": "2023-03-07",
+      "designation": "Web Developer",
+      "department": "Software Development",
+      "age": 98,
+      "aadhar": 3123,
+      "pan": 312,
+      "address": "21",
+      "city": "321",
+      "state": "321",
+      "country": "3",
+      "refnumber": "9494944646",
+      "mobilenumber": "312321212121",
+      "salary": 300000,
+      "isactive": true
+    }
+  ],
+  "role": [
+    {
+      "id": "894E49$%#@5%@412$",
+      "name": "Admin"
+    },
+    {
+      "id": "1EE585$%#@5%@732$",
+      "name": "Hr"
+    },
+    {
+      "id": "5EE585$%#@5%@732$",
+      "name": "Employee"
+    }
+  ],
+  "empattendance": [
+    {
+      "date": "06/04/2023",
+      "EmployeeName": "saipremchander",
+      "present": 1,
+      "id": 1
+    },
+    {
+      "date": "06/04/2023",
+      "EmployeeName": "saipremchander",
+      "present": 1,
+      "id": 2
+    },
+    {
+      "date": "06/04/2023",
+      "EmployeeId": "202208",
+      "EmployeeName": "saipremchander",
+      "Absent": 1,
+      "id": 3
+    },
+    {
+      "date": "06/04/2023",
+      "Id": "202208",
+      "EmployeeName": "saipremchander",
+      "Absent": 1,
+      "id": 4
+    },
+    {
+      "date": "06/04/2023",
+      "id": "202208",
+      "EmployeeName": "saipremchander",
+      "present": 1
+    },
+    {
+      "date": "06/04/2023",
+      "EmployeeId": "202208",
+      "EmployeeName": "saipremchander",
+      "present": 1,
+      "id": "5Jnzum6"
+    }
+  ],
+  "checkins": [
+    {
+      "date": "22/03/2023",
+      "employeename": "saipremchander",
+      "checkedin": "14:16:42",
+      "checkedout": "14:16:52",
+      "working": "0hr : 0mm : 10sec",
+      "id": 202207
+    },
+    {
+      "date": "22/03/2023",
+      "employeename": "saipremchander",
+      "employeeid": "202207",
+      "checkedin": "09:22:00",
+      "checkedout": "09:22:42",
+      "working": "0hr : 0mm : 1sec",
+      "id": 202207
+    },
+    {
+      "date": "22/03/2023",
+      "employeename": "BBB Chakraborthy",
+      "employeeid": "202208",
+      "checkedin": "09:28:17",
+      "checkedout": "09:28:23",
+      "working": "0hr : 0mm : 1sec",
+      "id": 202208
+    },
+    {
+      "date": "22/03/2023",
+      "employeename": "Santanu Chakraborthy",
+      "id": "202209",
+      "checkedin": "17:26:03",
+      "checkedout": "17:26:08",
+      "working": "0hr : 0mm : 1sec"
+    },
+    {
+      "date": "26/03/2023",
+      "employeename": "saipremchander",
+      "employeeid": "202207",
+      "checkedin": "18:44:05",
+      "checkedout": "18:44:11",
+      "working": "0hr : 0mm : 1sec",
+      "id": "fOUtcBN"
+    },
+    {
+      "date": "26/03/2023",
+      "employeename": "saipremchander",
+      "employeeid": "202207",
+      "checkedin": "18:46:43",
+      "checkedout": "18:46:49",
+      "working": "0hr : 0mm : 1sec",
+      "id": "Qd8OzEB"
+    },
+    {
+      "date": "26/03/2023",
+      "employeename": "Santanu Chakraborthy",
+      "employeeid": "202209",
+      "checkedin": "21:24:15",
+      "checkedout": "21:24:24",
+      "working": "0hr : 0mm : 1sec",
+      "id": "oS4FBKu"
+    },
+    {
+      "date": "26/03/2023",
+      "employeename": "saipremchander",
+      "employeeid": "202207",
+      "checkedout": "23:17:38",
+      "working": "0hr : 0mm : 1sec",
+      "id": "ty4gmNh"
+    }
+  ],
+  "holidays": [
+    {
+      "date": "2023-03-22",
+      "festivalname": "Ugadi",
+      "description": "Ugadi or Yugadi, also known as Samvatsarādi is New Year's Day according to the Hindu calendar and is celebrated in the states of Andhra Pradesh, Telangana, ",
+      "greeting": "",
+      "id": "c3Y8zxc"
+    },
+    {
+      "id": "Uz51BEL",
+      "date": "2023-03-10",
+      "festivalname": "Dast",
+      "description": "t",
+      "greeting": null
+    },
+    {
+      "id": "GzpiK-n",
+      "date": "2023-03-26",
+      "festivalname": "Birthday",
+      "description": "Birthday",
+      "greeting": null
+    }
+  ],
+  "notifications": [
+    {
+      "date": "21/03/2023",
+      "EmployeeName": "saipremchander",
+      "label": "Early Checkout",
+      "description": "test",
+      "id": 1
+    },
+    {
+      "date": "22/03/2023",
+      "EmployeeName": "saipremchander",
+      "label": "Early Checkout",
+      "description": "Headach",
+      "id": 2
+    },
+    {
+      "date": "22/03/2023",
+      "EmployeeName": "BBB Chakraborthy",
+      "label": "Early Checkout",
+      "description": "Head",
+      "id": 3
+    },
+    {
+      "date": "22/03/2023",
+      "EmployeeName": "Santanu Chakraborthy",
+      "label": "Early Checkout",
+      "description": "test",
+      "id": 4
+    },
+    {
+      "date": "22/03/2023",
+      "EmployeeName": "Santanu Chakraborthy",
+      "label": "Early Checkout",
+      "description": "test",
+      "id": 5
+    },
+    {
+      "date": "22/03/2023",
+      "EmployeeName": "Santanu Chakraborthy",
+      "label": "Early Checkout",
+      "description": "test",
+      "id": 6
+    },
+    {
+      "date": "22/03/2023",
+      "EmployeeName": "Santanu Chakraborthy",
+      "label": "Early Checkout",
+      "description": "test",
+      "id": 7
+    },
+    {
+      "date": "22/03/2023",
+      "EmployeeName": "Santanu Chakraborthy",
+      "label": "Early Checkout",
+      "description": "test",
+      "id": 8
+    },
+    {
+      "date": "22/03/2023",
+      "EmployeeName": "saipremchander",
+      "label": "Early Checkout",
+      "description": "test",
+      "id": 9
+    },
+    {
+      "date": "22/03/2023",
+      "EmployeeName": "saipremchander",
+      "label": "Early Checkout",
+      "description": "test",
+      "id": 10
+    },
+    {
+      "date": "22/03/2023",
+      "EmployeeName": "Santanu Chakraborthy",
+      "label": "Early Checkout",
+      "description": "test",
+      "id": 11
+    },
+    {
+      "date": "22/03/2023",
+      "EmployeeName": "Santanu Chakraborthy",
+      "label": "Early Checkout",
+      "description": "test",
+      "id": 12
+    },
+    {
+      "date": "22/03/2023",
+      "EmployeeName": "Santanu Chakraborthy",
+      "label": "Early Checkout",
+      "description": "fasd",
+      "id": 13
+    },
+    {
+      "date": "22/03/2023",
+      "EmployeeName": "Santanu Chakraborthy",
+      "label": "Early Checkout",
+      "description": "tttttttt",
+      "id": 14
+    },
+    {
+      "date": "22/03/2023",
+      "EmployeeName": "Santanu Chakraborthy",
+      "label": "Early Checkout",
+      "description": "fsad",
+      "id": 15
+    },
+    {
+      "date": "22/03/2023",
+      "EmployeeName": "saipremchander",
+      "label": "Early Checkout",
+      "description": "test",
+      "id": 16
+    },
+    {
+      "date": "22/03/2023",
+      "EmployeeName": "saipremchander",
+      "label": "Early Checkout",
+      "description": "test",
+      "id": 17
+    },
+    {
+      "date": "26/03/2023",
+      "EmployeeName": "saipremchander",
+      "label": "Reason For Early Checkout",
+      "description": "test",
+      "id": 18
+    },
+    {
+      "date": "26/03/2023",
+      "EmployeeName": "saipremchander",
+      "label": "Reason For Early Checkout",
+      "description": "test",
+      "id": 19
+    },
+    {
+      "date": "26/03/2023",
+      "EmployeeName": "saipremchander",
+      "label": "Reason For Early Checkout",
+      "description": "te",
+      "id": 20
+    },
+    {
+      "date": "26/03/2023",
+      "EmployeeName": "saipremchander",
+      "label": "Reason For Early Checkout",
+      "description": "test",
+      "id": 21
+    },
+    {
+      "date": "26/03/2023",
+      "EmployeeName": "saipremchander",
+      "label": "Reason For Early Checkout",
+      "description": "ads",
+      "id": 22
+    },
+    {
+      "date": "26/03/2023",
+      "EmployeeName": "saipremchander",
+      "label": "Reason For Early Checkout",
+      "description": "test",
+      "id": 23
+    },
+    {
+      "date": "26/03/2023",
+      "EmployeeName": "saipremchander",
+      "label": "Reason For Early Checkout",
+      "description": "sda",
+      "id": 24
+    },
+    {
+      "date": "26/03/2023",
+      "EmployeeName": "saipremchander",
+      "label": "Reason For Early Checkout",
+      "description": "dsad",
+      "id": 25
+    },
+    {
+      "date": "26/03/2023",
+      "EmployeeName": "saipremchander",
+      "label": "Reason For Early Checkout",
+      "description": "dsad",
+      "id": 26
+    },
+    {
+      "date": "26/03/2023",
+      "EmployeeName": "saipremchander",
+      "label": "Reason For Early Checkout",
+      "description": "dads",
+      "id": 27
+    },
+    {
+      "date": "26/03/2023",
+      "EmployeeName": "saipremchander",
+      "label": "Reason For Early Checkout",
+      "description": "adas",
+      "id": 28
+    },
+    {
+      "date": "26/03/2023",
+      "EmployeeName": "Santanu Chakraborthy",
+      "label": "Reason For Early Checkout",
+      "description": "Headach",
+      "id": 29
+    },
+    {
+      "date": "26/03/2023",
+      "EmployeeName": "saipremchander",
+      "label": "Reason For Early Checkout",
+      "description": "Headach",
+      "id": 30
+    }
+  ],
+  "tasklist": [
+    {
+      "date": "26/03/2023",
+      "time": 1679839099779,
+      "EmployeeName": "saipremchander",
+      "employeeId": "202207",
+      "description": "fdasd",
+      "id": 9
+    },
+    {
+      "date": "26/03/2023",
+      "time": 1679839721143,
+      "EmployeeName": "saipremchander",
+      "employeeId": "202207",
+      "description": "dasdasd",
+      "id": 10
+    },
+    {
+      "date": "26/03/2023",
+      "time": 1679839775235,
+      "EmployeeName": "saipremchander",
+      "employeeId": "202207",
+      "description": "dasdasd",
+      "ttt": {
+        "closed": true,
+        "_parentage": null,
+        "_finalizers": null,
+        "isStopped": true,
+        "destination": null
+      },
+      "id": 11
+    },
+    {
+      "date": "26/03/2023",
+      "time": 1679839859796,
+      "EmployeeName": "saipremchander",
+      "employeeId": "202207",
+      "description": "dasda",
+      "team": "202207",
+      "id": 12
+    },
+    {
+      "date": "26/03/2023",
+      "time": 1679839859796,
+      "EmployeeName": "saipremchander",
+      "employeeId": "202207",
+      "description": "dasda",
+      "team": "202207",
+      "id": 13
+    },
+    {
+      "date": "26/03/2023",
+      "time": 1679839859796,
+      "EmployeeName": "saipremchander",
+      "employeeId": "202207",
+      "description": "dasda",
+      "team": "202207",
+      "id": 14
+    },
+    {
+      "date": "26/03/2023",
+      "time": 1679839985069,
+      "EmployeeName": "saipremchander",
+      "employeeId": "202207",
+      "description": "dasdasd",
+      "team": "{\"id\":\"202207\",\"firstName\":\"saiprem\",\"lastName\":\"chander\",\"employeename\":\"saipremchander\",\"employeeemail\":\"prm@gmail.co\",\"password\":\"Prem@9703\",\"gender\":\"male\",\"role\":\"admin\",\"profilepic\":\"C:\\\\fakepath\\\\screencapture-localhost-new1-index-php-elementor-29-2023-03-11-00_54_34.png\",\"fatherName\":\"sarangapani\",\"motherName\":\"laxmi\",\"dateofbirth\":\"2023-03-17\",\"dateofjoining\":\"2022-03-22\",\"designation\":\"Web Development\",\"department\":\"Software Development\",\"age\":28,\"aadhar\":\"381491315474\",\"pan\":\"EJPPK2606L\",\"address\":\"25-8-154 Bapujinagar, Kazipet, Warangal\",\"city\":\"Hanamkonda\",\"state\":\"Telangana\",\"country\":\"India\",\"refnumber\":\"9494944646\",\"mobilenumber\":\"9494944646\",\"salary\":250000,\"isactive\":true}",
+      "id": 15
+    },
+    {
+      "date": "26/03/2023",
+      "time": 1679840040285,
+      "EmployeeName": "saipremchander",
+      "employeeId": "202207",
+      "description": "dadasd",
+      "team": "Software Development",
+      "id": 16
+    },
+    {
+      "date": "26/03/2023",
+      "time": 1679840631231,
+      "EmployeeName": "BBB Chakraborthy",
+      "employeeId": "202208",
+      "description": "test",
+      "team": "Software Development",
+      "id": 17
+    }
+  ]
+}

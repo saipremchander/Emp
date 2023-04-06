@@ -1,0 +1,77 @@
+<div class="row">
+    <div class="breadcrumb">
+      <div class="col-sm-12 col-md-6">
+        <h5>{{timetrackerheader}}</h5>
+        <small class="text-muted">Timer / {{timetrackerheader}}</small>
+      </div>
+      <div class="col-sm-12 col-md-6" align="right">
+        <!-- <button mat-raised-button color="primary" class="mx-2"  (click)="backholiday()"><span class="fa fa-undo"></span> back to list</button>
+        <button mat-raised-button color="accent" (click)="addholiday()"  ><span class="fa fa-calendar-o"></span> Add Holiday</button> -->
+      </div>
+    </div>
+  </div>
+  <div class="card" >
+    <div class="card-body">
+       
+        <div class="row mb-3">
+            <div class="col-sm-12 col-md-5">
+             
+              
+                <input type="search" class="form-control" (keyup)="applyFilter($event)" placeholder="Search Employee" #input>
+            
+            </div>
+    
+            <div class="col-sm-12 col-md-7" align="right">
+     
+              </div>
+        </div>
+   
+    
+        <div class="row">
+          <div class="table-responsive">
+
+
+         <div class="mat-elevation-z8">
+          <table mat-table  [dataSource]="dataSource" matSort class="table table-hover">
+            <ng-container matColumnDef="Employee Id">
+              <mat-header-cell *matHeaderCellDef> Employee Id </mat-header-cell>
+              <mat-cell *matCellDef="let data"> {{ data.employeeid }}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="Date">
+              <mat-header-cell *matHeaderCellDef> Date </mat-header-cell>
+              <mat-cell *matCellDef="let data"> {{ data.date }}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="Name">
+              <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+              <mat-cell *matCellDef="let data"> {{ data.employeename }}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="TimeIn">
+              <mat-header-cell *matHeaderCellDef> TimeIn </mat-header-cell>
+              <mat-cell *matCellDef="let data"> {{ data.checkedin }}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="TimeOut">
+              <mat-header-cell *matHeaderCellDef> TimeOut </mat-header-cell>
+              <mat-cell *matCellDef="let data"> {{ data.checkedout }}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="OnOffice">
+              <mat-header-cell *matHeaderCellDef> OnOffice </mat-header-cell>
+              <mat-cell *matCellDef="let data"> {{ data.working }}</mat-cell>
+            </ng-container>
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+
+                  <!-- Row shown when there is no matching data. -->
+            <tr class="mat-row" *matNoDataRow>
+              <td class="mat-cell" colspan="5">No data matching the filter "{{input.value}}"</td>
+            </tr>
+          </table>
+          
+            <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+          </div>
+        </div>
+        </div>
+
+    </div>
+</div>
+
+
