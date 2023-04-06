@@ -1,27 +1,20 @@
-# EMPWebUI (CheckIn Checkout Break Time/Daily Task List)
+# Employee Managment System Using JSON Server
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.4.
+Features
+- Login Roles (Admin,HR and Employee)
+- Check In Checkout Break Time Calculation
+- Notification if Early Checkout
+- Dynamic View of Employee Birthday and Work Anniversary 
+- Task List Updates (Team tasks, Logged In Tasks)
+- Holiday List
+- 
 
-## Development server
+Employee Login
+![image](https://user-images.githubusercontent.com/95474305/230457247-61d6eb59-a35f-417a-a5a7-fd860df4c299.png)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Admin Login
+![image](https://user-images.githubusercontent.com/95474305/230457359-3243aa06-1b5b-49ca-a18e-75c2bebbb918.png)
 
-## Code scaffolding
+HR Login
+![image](https://user-images.githubusercontent.com/95474305/230458202-ff230e5b-13a9-4ce6-b7f0-aab8a5b4f6e9.png)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
